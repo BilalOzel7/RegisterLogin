@@ -62,6 +62,7 @@ export class RegisterComponent implements OnInit {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(24)
+        
       ])),
       email: new FormControl('', Validators.compose([
         Validators.required,
@@ -101,7 +102,7 @@ export class RegisterComponent implements OnInit {
   password(formGroup: FormGroup) {
     const { value: password } = formGroup.get('password');
     const { value: confirmPassword } = formGroup.get('confirmpassword');
-    return password === confirmPassword ? null : {Uyarı:"Şifreler Uyuşmuyor.Kontrol Ediniz."};
+    return password === confirmPassword ? {Bilgi:"Şifreler Uyumlu"} : {Uyarı:"Şifreler Uyuşmuyor.Kontrol Ediniz."};
   }
 
 }

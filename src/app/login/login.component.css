@@ -1,0 +1,82 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 110px;
+  padding-bottom: 230px;
+ 
+ 
+
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 410px;
+  padding: 15px;
+  margin: auto;
+  
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+
+
+.form-signin input[type="email"] {
+    text-align: center;
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-radius: 25px 25px 25px 25px;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-radius: 25px 25px 25px 25px;
+}
+.form-signin input[type="text"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-radius: 25px 25px 25px 25px;
+}
+.form-signin button {
+    padding: 7px;
+    margin-top:20px;
+    width: 50%;
+    background-color: coral;
+    border-radius: 25px 25px 25px 25px;
+}
+.sifre{
+  padding-left:0%;
+  margin-left:0%;
+}
+.hatirla{
+/* padding-left:100px; */
+/* margin-right:0px; */
+}
+.input-group{
+  display: flex;
+  justify-content: space-between;
+  list-style:none;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  cursor:pointer;
+}
+
+
+

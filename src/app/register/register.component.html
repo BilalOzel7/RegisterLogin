@@ -1,0 +1,88 @@
+
+<body class="text-center">
+  <main class="form-signin"> 
+  <div class="container">
+    <div style="margin: -20px">
+      <h1 class="ion-text-center"></h1>
+      <form [formGroup]="registerForm">
+        <div class="form-group">
+          <input class="form-control" formControlName="fname" type="fname" placeholder="Adınız"/>
+        </div>
+        <div class="form-group">
+          <input class="form-control" formControlName="lname" type="lname" placeholder="Soyadınız" />
+        </div>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.fname">
+            <div class="error-message" *ngIf="registerForm.get('fname').hasError(error.type) && (registerForm.get('fname').dirty || registerForm.get('fname').touched)">
+              <small style="color: red">  {{ error.message }}</small>
+            </div>
+          </ng-container>
+        </div>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.lname">
+            <div class="error-message" *ngIf="registerForm.get('lname').hasError(error.type) && (registerForm.get('lname').dirty || registerForm.get('lname').touched)">
+              <small style="color: red">  {{ error.message }}</small>
+            </div>
+          </ng-container>
+        </div>
+        <div class="form-group">
+          <input class="form-control" formControlName="email" type="email" placeholder="E Posta Adresiniz" />
+        </div>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.email">
+            <div class="error-message" *ngIf="registerForm.get('email').hasError(error.type) && 
+      (registerForm.get('email').dirty || registerForm.get('email').touched)">
+      <small style="color: red">  {{ error.message }}</small>
+            </div>
+          </ng-container>
+        </div>
+        <div class="form-group">
+          
+          <input class="form-control" formControlName="mobile" type="mobile" placeholder="Telefon Numaranız" />
+        </div>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.mobile">
+            <div class="error-message" *ngIf="registerForm.get('mobile').hasError(error.type) && 
+      (registerForm.get('mobile').dirty || registerForm.get('mobile').touched)">
+      <small style="color: red">  {{ error.message }}</small>
+            </div>
+          </ng-container>
+        </div>
+        <div class="form-group">
+          <input class="form-control" formControlName="password" type="password" [type]="hide ? 'password' : 'text'" placeholder="Şifreniz" />
+        </div>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.password">
+            <div class="error-message" *ngIf="registerForm.get('password').hasError(error.type) && (registerForm.get('password').dirty || registerForm.get('password').touched)">
+              <small style="color: red">  {{ error.message }}</small>
+            </div>
+          </ng-container>
+        </div>
+        <div class="form-group">
+          <input matInput class="form-control" formControlName="confirmpassword" [type]="hide ? 'password' : 'text'" type="password" placeholder="Şifre Onayı" />
+          <i class="material-icons" matSuffix (click)="hide = !hide">
+            {{hide ? 'visibility':'visibility_off'}}
+          </i>
+        </div>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.confirmpassword">
+            <div class="error-message" *ngIf="registerForm.get('confirmpassword').hasError(error.type) && (registerForm.get('confirmpassword').dirty || registerForm.get('confirmpassword').touched)">
+              <small style="color: red">  {{ error.message }}</small>
+            </div>
+          </ng-container>
+        </div>
+        <div >
+          <small  style="color: red;text-align: center;">{{registerForm.errors | json}}</small> 
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="check" name="check"  formControlName="check"  name="check">
+          <label for="check" style="font-size: 12px"> <label style="font-size: 12px; color:coral ;">Üyelik koşullarını</label> ve kişisel verilerimin korunmasını kabul ediyorum.</label>
+        </div>
+        <button class="form-control btn btn-primary" [disabled]="!registerForm.valid"  routerLink="/login">Üye ol</button>
+      </form>
+    </div>
+  </div>
+</main>
+</body>
+      
+

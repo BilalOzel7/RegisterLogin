@@ -1,0 +1,50 @@
+<body class="text-center">
+  <main class="form-signin">
+      <form [formGroup]="loginForm">
+        <h1 class="h3 mb-3 fw-normal">Giriş Yap</h1>
+       
+        
+        <div class="form-floating">
+          <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="E-Posta Adresiniz" 
+          [class.is-invalid] = "loginForm.get('email').invalid && loginForm.get('email').touched">
+          <label for="floatingInput">E-Mail Adresiniz</label>
+         
+        </div>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.email">
+            <div class="error-message" *ngIf="loginForm.get('email').hasError(error.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+              <small style="color: red">  {{ error.message }}</small>
+            </div>
+          </ng-container>
+        </div>
+        
+        
+        <div class="form-floating">
+          <input formControlName="password" type="password" [type]="hide ? 'password' : 'text'" class="form-control" id="floatingPassword" placeholder="Password"
+          [class.is-invalid] = "loginForm.get('password').invalid && loginForm.get('password').touched">
+          <label for="floatingPassword">Şifreniz</label>
+          <i class="material-icons" matSuffix (click)="hide = !hide">
+            {{hide ? 'visibility':'visibility_off'}}
+          </i>
+          
+        </div>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.password">
+            <div class="error-message" *ngIf="loginForm.get('password').hasError(error.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+              <small style="color: red">  {{ error.message }}</small>
+            </div>
+          </ng-container>
+        </div>
+        <ul class="input-group">
+          <li>
+          <a href="#" style="font-size: 14px; color:coral">Şifremi Unuttum</a>
+          </li>
+          <li>
+          <label class="hatırla" for="check" style="font-size: 14px"> <input type="checkbox" id="check" name="check" >Beni Hatırla</label><br>
+          </li>
+        </ul>
+        <button  class="w-70 btn btn-lg btn-success" type="submit" >Giriş Yap</button>
+      </form>
+    </main>
+    
+      </body>
